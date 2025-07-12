@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head') %>
+<body>
+    <%- include('partials/navbar') %>
+    <div class="container">
+        <div class="single-post">
+            <h2><%= post.title %></h2>
+            <p class="author">By <%= post.author %> on <%= post.createdAt.toLocaleDateString() %></p>
+            <div class="content-body">
+                <p><%= post.content %></p>
+            </div>
+            <div class="post-actions">
+                <a href="/posts/<%= post._id %>/edit" class="edit-button">Edit</a>
+                <form action="/posts/<%= post._id %>?_method=DELETE" method="POST" style="display:inline;">
+                    <button type="submit" class="delete-button" onclick="return confirm('Are you sure you want to delete this post?');">Delete</button>
+                </form>
+                <a href="/posts" class="back-button">Back to All Posts</a>
+            </div>
+        </div>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+// Client-side JavaScript will go here later if needed for dynamic effects.
