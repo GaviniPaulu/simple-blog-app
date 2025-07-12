@@ -33,7 +33,7 @@ postSchema.pre('save', function(next) {
 });
 
 // Create the Mongoose model from the schema
-const Post = mongoose.model('post', postSchema);
+const post = mongoose.model('post', postSchema);
 
 // Export the Post model
 module.exports = post;
